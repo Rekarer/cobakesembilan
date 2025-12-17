@@ -10,7 +10,7 @@
         /* Pengaturan font dan latar belakang global */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: rgb(240, 253, 244); 
+            background-color: #f0fdf4; 
             display: flex;
             justify-content: center;
             align-items: center;
@@ -336,11 +336,8 @@
                 waktu: dateTime.time,
             };
 
-            if (PABBLY_WEBHOOK_URL.includes('replace/me') || PABBLY_WEBHOOK_URL.includes('IjU3NjYwNTY0MDYzZjA0M2Q1MjY4NTUzMDUxMzAi_pc')) {
-                console.error('ERROR: Ganti PABBLY_WEBHOOK_URL dengan URL Anda yang sebenarnya.');
-                showMessage('GAGAL KIRIM: Harap ganti placeholder PABBLY_WEBHOOK_URL di kode!', 'error');
-                return;
-            }
+            // Pemeriksaan placeholder telah dihapus, sehingga fetch akan dieksekusi 
+            // menggunakan URL PABBLY_WEBHOOK_URL yang tersedia.
 
             try {
                 const response = await fetch(PABBLY_WEBHOOK_URL, {
